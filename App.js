@@ -1,45 +1,16 @@
 import * as React from 'react';
-import { Text, View,ImageBackground,StyleSheet } from 'react-native';
+import { Text, View,ImageBackground,StyleSheet,StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Entypo,MaterialIcons,Ionicons,MaterialCommunityIcons } from 'react-native-vector-icons'
-import MainBG from './src/images/mainbg.png'
-import { Dimensions } from 'react-native';
-const { Height,Width } = Dimensions.get('window');
+
+//screens
+import HomeScreen from './src/screens/HomeScreen/Home';
+import Yangiliklar from './src/screens/Yangiliklar/Yangiliklar'
+import Korsatuvlar from './src/screens/Korsatuvlar/Korsatuvlar'
+import SettingsScreen from './src/screens/SettingScreen/Settings'
 
 
-function HomeScreen() {
-  return (
-    <ImageBackground source={MainBG} style={styles.image}>
-      <Text >Elements</Text>
-      <Text >in Front of</Text>
-      <Text >Background</Text>
-    </ImageBackground>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
-function Yangiliklar() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Yangiliklar!</Text>
-    </View>
-  );
-}
-
-function Korsatuvlar() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Korsatuvlar!</Text>
-    </View>
-  );
-}
 const Tab = createBottomTabNavigator()
 
 
@@ -105,22 +76,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  image: {
-    resizeMode: 'repeat',
-    height: '100%',
-    width: Width
-    
-  },
-  text: {
-    color: 'white',
-    fontSize: 42,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    backgroundColor: '#000000a0',
-  },
-});
