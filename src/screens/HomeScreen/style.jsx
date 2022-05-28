@@ -9,14 +9,17 @@ export const Container = styled.ImageBackground`
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
+    margin: auto;
 `
 export const Wrapper = styled.View`
     margin: 23px;
     height: 500px;
     margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 export const MainText = styled.Text`
-    font-family: 'Gilroy';
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
@@ -25,7 +28,7 @@ export const MainText = styled.Text`
     color: rgba(37, 53, 54, 1);
     margin-top: 10px;
     margin-bottom: 15px;
-    padding-left: 10px;
+    padding-left: 8px;
 `
 
 export const BigButton1 = styled.Pressable`

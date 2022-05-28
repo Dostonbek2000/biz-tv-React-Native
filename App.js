@@ -3,12 +3,19 @@ import { Text, View,ImageBackground,StyleSheet,StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Entypo,MaterialIcons,Ionicons,MaterialCommunityIcons } from 'react-native-vector-icons'
+import { createStackNavigator } from '@react-navigation/stack';
 
 //screens
-import HomeScreen from './src/screens/HomeScreen/Home';
-import Yangiliklar from './src/screens/Yangiliklar/Yangiliklar'
-import Korsatuvlar from './src/screens/Korsatuvlar/Korsatuvlar'
-import SettingsScreen from './src/screens/SettingScreen/Settings'
+import Yangiliklar from './src/screens/Yangiliklar/Yangiliklar';
+import HomeScreen from './src/screens/HomeScreen/HomeScreen';
+import Korsatuvlar from './src/screens/Korsatuvlar/Korsatuvlar';
+import SettingsScreen from './src/screens/SettingScreen/Settings';
+
+
+//components
+import BizTV from './src/components/BizTv/BizTv'
+import BizMusic from './src/components/BizMusic/BizMusic';
+import BizCinema from './src/components/BizCinema/BizCinema';
 
 
 const Tab = createBottomTabNavigator()
@@ -17,6 +24,7 @@ const Tab = createBottomTabNavigator()
 
 export default function App() {
   return (
+    <>
     <NavigationContainer >
       <Tab.Navigator
 
@@ -41,6 +49,15 @@ export default function App() {
               <Entypo name={'dots-three-horizontal'} size={size} color={color} />
             }
           },
+          tabBarButton: [
+            "bizmusic",
+            "bizcinema",
+            "biztv"
+          ].includes(route.name)
+            ? () => {
+                return null;
+              }
+            : undefined,
           
             headerShown:false,
             tabBarStyle: {
@@ -67,12 +84,19 @@ export default function App() {
           tabBarInactiveTintColor: 'gray',
           tabBarActiveBackgroundColor:'none'
         })}
-      >
+        
+        >
         <Tab.Screen headerShown={false} name="biz tv" component={HomeScreen} />
         <Tab.Screen headerShown={false} name="yangiliklar" component={Yangiliklar} />
         <Tab.Screen headerShown={false} name="ko'rsatuvlar" component={Korsatuvlar} />
         <Tab.Screen headerShown={false} name="boshqa" component={SettingsScreen} />
+        <Tab.Screen headerShown={false} name="biztv" component={BizTV} />
+        <Tab.Screen headerShown={false} name="bizcinema" component={BizCinema} />
+        <Tab.Screen headerShown={false} name="bizmusic" component={BizMusic} />
       </Tab.Navigator>
+
     </NavigationContainer>
+    </>
+    
   );
 }
