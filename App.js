@@ -3,7 +3,7 @@ import { Text, View,ImageBackground,StyleSheet,StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Entypo,MaterialIcons,Ionicons,MaterialCommunityIcons } from 'react-native-vector-icons'
-import { createStackNavigator } from '@react-navigation/stack';
+
 
 //screens
 import Yangiliklar from './src/screens/Yangiliklar/Yangiliklar';
@@ -12,10 +12,11 @@ import Korsatuvlar from './src/screens/Korsatuvlar/Korsatuvlar';
 import SettingsScreen from './src/screens/SettingScreen/Settings';
 
 
-//components
+// //components
 import BizTV from './src/components/BizTv/BizTv'
-import BizMusic from './src/components/BizMusic/BizMusic';
+// import BizMusic from './src/components/BizMusic/BizMusic';
 import BizCinema from './src/components/BizCinema/BizCinema';
+import DetailComponent from './src/components/DetailComponent/DetailComponent';
 
 
 const Tab = createBottomTabNavigator()
@@ -52,7 +53,8 @@ export default function App() {
           tabBarButton: [
             "bizmusic",
             "bizcinema",
-            "biztv"
+            "biztv",
+            "detail"
           ].includes(route.name)
             ? () => {
                 return null;
@@ -80,7 +82,7 @@ export default function App() {
             height: 64,
             paddingBottom: 5
         },
-          tabBarActiveTintColor: 'tomato',
+          tabBarActiveTintColor: 'black',
           tabBarInactiveTintColor: 'gray',
           tabBarActiveBackgroundColor:'none'
         })}
@@ -92,7 +94,8 @@ export default function App() {
         <Tab.Screen headerShown={false} name="boshqa" component={SettingsScreen} />
         <Tab.Screen headerShown={false} name="biztv" component={BizTV} />
         <Tab.Screen headerShown={false} name="bizcinema" component={BizCinema} />
-        <Tab.Screen headerShown={false} name="bizmusic" component={BizMusic} />
+        <Tab.Screen headerShown={false} name="detail" component={DetailComponent} />
+        {/* <Tab.Screen headerShown={false} name="bizmusic" component={BizMusic} /> */}
       </Tab.Navigator>
 
     </NavigationContainer>

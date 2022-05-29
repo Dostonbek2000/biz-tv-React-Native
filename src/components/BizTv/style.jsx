@@ -10,12 +10,14 @@ export const Container = styled.ImageBackground`
     box-sizing: border-box;
     margin: auto;
 `
-
-export const PlayIcon  = styled.Image`
+export const PlayTouch = styled.TouchableOpacity`
     position: absolute;
     top: 25%;
     left: 35%;
     z-index: 99909;
+`
+export const PlayIcon  = styled.Image`
+    
 `
 
 export const BottomContainer = styled.View`
@@ -71,6 +73,7 @@ export const ScrollDiv = styled.ScrollView`
     width: 100%;
     height: 100%;
     margin-top: 10px;
+    color: red;
 `
 export const MainWords = styled.Text`
     margin-left: 20px;

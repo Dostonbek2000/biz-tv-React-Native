@@ -1,18 +1,13 @@
-import { StyleSheet, Text, View ,Image , Button} from "react-native";
+import { StyleSheet, Text, View ,Image , Button , SafeAreaView, ScrollView, StatusBar } from "react-native";
 import React from "react";
-import { BottomContainer, Container, EfirdaWord, Efirlar, MainView, MainWords, Name, PlayIcon, ScrollDiv, Tab, TabWrapper, TimeName, VideoContainer } from "./style";
+import { BottomContainer, Container, EfirdaWord, Efirlar, MainView, MainWords, Name, PlayIcon, PlayTouch, ScrollDiv, Tab, TabWrapper, TimeName, VideoContainer } from "./style";
 import MainBG from "./../../images/mainbg.png";
 import Ozb24 from "./../../images/ozb24.png";
-import { configureFonts, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { Video, AVPlaybackStatus } from 'expo-av';
 import Play_Icon from '../../images/play-button.png'
 import {EfirlarDAta} from '../../data/efirlar'
-import {fontConfig } from './../../constants/index'
+import video1 from '../../videos/vid1.mp4'
 
-const theme = {
-  ...DefaultTheme,
-  fonts: configureFonts(fontConfig),
-};
 
 
 
@@ -24,22 +19,20 @@ const BizTv = () => {
   const [cat_data, setcat_data] = React.useState(['480','720','1080']);
 
   return (
+<SafeAreaView>
     <Container source={MainBG} resizeMode="repeat">
       <View style={styles.shadowProp}>
-        <PlayIcon source={Play_Icon} 
-          //  title={status.isPlaying ? 'Pause' : 'Play'}
+        {status.isPlaying ? null : <PlayTouch
           onPress={() =>
             status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
           }
-
-        /> 
+        >
+        <PlayIcon source={Play_Icon} /> 
+        </PlayTouch>}
         <Video
           ref={video}
-          style={{width:'100%',height:'90%'}}
-          source={{
-            uri: 'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
-          }}
-          useNativeControls
+          style={{width:'100%',height:'90%',marginTop:-10}}
+          source={video1}
           resizeMode="contain"
           isLooping
           onPlaybackStatusUpdate={status => setStatus(() => status)}
@@ -61,6 +54,7 @@ const BizTv = () => {
               ))
             }
          </TabWrapper>
+     
          <Efirlar>
              <Name>Hozir efirda</Name>
              <ScrollDiv>
@@ -81,6 +75,7 @@ const BizTv = () => {
          </Efirlar>
       </BottomContainer>
     </Container>
+    </SafeAreaView>
   );
 };
 
@@ -115,5 +110,15 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
+  },
+  container: {
+
+  },
+  scrollView: {
+    backgroundColor: 'pink',
+    marginHorizontal: 20,
+  },
+  text: {
+    fontSize: 42,
   },
 });
