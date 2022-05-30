@@ -24,7 +24,7 @@ export const YangiliklarData = [
         title:'Qirg‘izistonda yana siyosiy inqiroz: Atamboyev nega taslim bo‘ldi?',
         category:'SPORT',
         vaqt:'ВЧЕРА, 23:00',
-        img:'http://storage.kun.uz/source/1/piqiS6GOqrrp4xgcd9Z9c1L7LeiAq3IS.jpg'
+        img:'https://st.depositphotos.com/1006899/3776/i/950/depositphotos_37765339-stock-photo-news.jpg'
     },
     {
         id:4,
