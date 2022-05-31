@@ -16,7 +16,7 @@ export const LinksContainer = styled.View`
     width: 80%;
     height: 50px;
     border: 1px solid #DADCE0;
-    margin-top: 110px;
+    margin-top: 90px;
     background-color: #E4E6EB;
     border-radius: 25px;
     display: flex;
