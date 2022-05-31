@@ -29,6 +29,7 @@ export const MainText = styled.Text`
     margin-top: 10px;
     margin-bottom: 15px;
     padding-left: 8px;
+    font-weight: 600;
 `
 
 export const BigButton1 = styled.Pressable`

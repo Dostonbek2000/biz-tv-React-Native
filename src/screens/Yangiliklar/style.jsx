@@ -31,7 +31,6 @@ export const ReusableImage = styled.Image`
 `
 export const Title = styled.Text`
     color: rgba(37, 53, 54, 1);
-    font-family: 'Roboto';
     font-size: 13px;
     font-weight: 700;
     line-height: 18px;
@@ -39,12 +38,10 @@ export const Title = styled.Text`
     text-align: left;
     padding-left: 4px;
     margin-top: 5px;
-    word-wrap: break-word;
 
 `
 export const Title1 = styled.Text`
     color: rgba(37, 53, 54, 1);
-    font-family: 'Roboto';
     font-size: 13px;
     font-weight: 700;
     line-height: 18px;

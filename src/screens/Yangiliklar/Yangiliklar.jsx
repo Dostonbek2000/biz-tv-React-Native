@@ -26,10 +26,18 @@ import {
 import { NewsCategories } from "../../data/new-category";
 import { MaterialIcons } from "react-native-vector-icons";
 import { YangiliklarData } from "../../data/yangiliklar";
+import { useFonts } from 'expo-font';
+
 
 const Yangiliklar = ({navigation}) => {
   const [category, setCategory] = useState("Barchasi");
   const [MyData, setMyData] = useState([])
+  const [loaded] = useFonts({
+    Gilroy: require('./../../fonts/Gilroy1.ttf'),
+  });
+  if (!loaded) {
+    return null;
+  }
 
   let Filtered = YangiliklarData.filter((item)=>{
     if(category==='Barchasi'){
@@ -45,7 +53,7 @@ const Yangiliklar = ({navigation}) => {
       style={{ ...styles.item, backgroundColor: item.bg }}
     >
       <CatText color={item.color}>{item.name}</CatText>
-      <Text style={{ marginLeft: 5 }}>
+      <Text style={{ marginLeft: 5,fontFamily:'Gilroy' }}>
         {item.name === category ? (
           <MaterialIcons name="check-circle" color={item.color} size={15} />
         ) : (
@@ -59,10 +67,10 @@ const Yangiliklar = ({navigation}) => {
     <Wrapper onPress={()=>navigation.navigate('detail',item)}>
       <ImageFor source={{uri:item.img}} />
       <RightView>
-        <Title>{item.title} </Title>
+        <Title style={{ fontFamily: 'Gilroy' }}>{item.title} </Title>
         <LoopWrapper>
-          <LoopCat><InTExt>{item.category}</InTExt></LoopCat>
-          <LoopTime>{item.vaqt}</LoopTime>
+          <LoopCat><InTExt  style={{ fontFamily: 'Gilroy' }}>{item.category}</InTExt></LoopCat>
+          <LoopTime  style={{ fontFamily: 'Gilroy' }}>{item.vaqt}</LoopTime>
         </LoopWrapper>
       </RightView>
     </Wrapper>
@@ -83,10 +91,10 @@ const Yangiliklar = ({navigation}) => {
       </FlatContainer>
       <OneNewsContainer>
         <ReusableImage source={{uri:Filtered[0].img}} />
-        <Title>{Filtered[0].title}</Title>
+        <Title style={{ fontFamily: 'Gilroy' }}>{Filtered[0].title}</Title>
         <LoopWrapper>
-          <LoopCat><InTExt>{Filtered[0].category}</InTExt></LoopCat>
-          <LoopTime>{Filtered[0].vaqt}</LoopTime>
+          <LoopCat><InTExt style={{ fontFamily: 'Gilroy' }}>{Filtered[0].category}</InTExt></LoopCat>
+          <LoopTime style={{ fontFamily: 'Gilroy' }}>{Filtered[0].vaqt}</LoopTime>
         </LoopWrapper>
       </OneNewsContainer>
       <AllFlatContainer>

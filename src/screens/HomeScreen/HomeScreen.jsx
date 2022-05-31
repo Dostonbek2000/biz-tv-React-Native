@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import {BigButton1, BigButton2, BigButton3, Container, Img, ImgLit, MainText, Wrapper} from './style'
+import { useFonts } from 'expo-font';
 
 import MainBG from './../../images/mainbg.png'
 import Img1 from './../../images/1.png'
@@ -8,10 +9,16 @@ import Img2 from './../../images/2.png'
 import Img3 from './../../images/3.png'
 
 const HomeScreen = ({ navigation }) => {
+  const [loaded] = useFonts({
+    Gilroy: require('./../../fonts/Gilroy.ttf'),
+  });
+  if (!loaded) {
+    return null;
+  }
   return (
     <Container source={MainBG} resizeMode='repeat'>
       <Wrapper>
-        <MainText>
+        <MainText style={{ fontFamily: 'Gilroy' }}>
           Assalomu alaykum, iltimos bizning kanallaridan birini tanlang
         </MainText>
         <BigButton1
