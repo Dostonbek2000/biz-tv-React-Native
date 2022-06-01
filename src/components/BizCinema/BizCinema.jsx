@@ -3,12 +3,22 @@ import React from 'react'
 
 const BizCinema = () => {
   return (
-    <View>
-      <Text>BizCinema</Text>
-    </View>
+    <View style={styles.container} >
+    <Text style={styles.word}>BizCinema</Text>
+  </View>
   )
 }
 
 export default BizCinema
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  word:{
+    fontSize:20,
+    color:'blue'
+  }
+})

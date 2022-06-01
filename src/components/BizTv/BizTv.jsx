@@ -34,6 +34,7 @@ const BizTv = () => {
           style={{width:'100%',height:'90%',marginTop:-10}}
           source={video1}
           resizeMode="contain"
+          useNativeControls
           isLooping
           onPlaybackStatusUpdate={status => setStatus(() => status)}
         />

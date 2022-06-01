@@ -14,7 +14,7 @@ import SettingsScreen from './src/screens/SettingScreen/Settings';
 
 // //components
 import BizTV from './src/components/BizTv/BizTv'
-// import BizMusic from './src/components/BizMusic/BizMusic';
+import BizMusic from './src/components/BizMusic/BizMusic';
 import BizCinema from './src/components/BizCinema/BizCinema';
 import DetailComponent from './src/components/DetailComponent/DetailComponent';
 
@@ -95,7 +95,7 @@ export default function App() {
         <Tab.Screen headerShown={false} name="biztv" component={BizTV} />
         <Tab.Screen headerShown={false} name="bizcinema" component={BizCinema} />
         <Tab.Screen headerShown={false} name="detail" component={DetailComponent} />
-        {/* <Tab.Screen headerShown={false} name="bizmusic" component={BizMusic} /> */}
+        <Tab.Screen headerShown={false} name="bizmusic" component={BizMusic} />
       </Tab.Navigator>
 
     </NavigationContainer>
